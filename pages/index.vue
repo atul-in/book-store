@@ -1,6 +1,7 @@
 <template>
     <div>
-        <v-row>
+        
+        <!-- <v-row>
             <v-col md="4">
                 <h2 class="text-center mb-5">Recently Read Books</h2>
                 <v-row v-for="(book, index) in recentBooks" :key="index">
@@ -37,23 +38,30 @@
                     </BookCard>
                 </v-row>
             </v-col>
+        </v-row> -->
+        
+        <v-row>
+            <BookCategorySection bookCategoryTitle="Recently Read Books" :books="recentBooks" />
+            <BookCategorySection bookCategoryTitle="Favourite Books" :books="favouriteBooks" />
+            <BookCategorySection bookCategoryTitle="Best Books" :books="bestBooks" />
         </v-row>
-
         <BookModal />
 
     </div>
 </template>
 
 <script>
-import BookCard from '../components/BookCard.vue';
+// import BookCard from '../components/BookCard.vue';
 import BookModal from '../components/BookModal.vue';
+import BookCategorySection from '../components/BookCategorySection.vue';
 import { eventBus } from '../eventBus';
 
 
 export default {
     components: {
-        BookCard,
+        // BookCard,
         BookModal,
+        BookCategorySection
     },
 
     data() {
